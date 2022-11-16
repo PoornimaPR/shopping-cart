@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hellomart</title>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/svg"
+      href="./assests/icons/cart.svg"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./shopping.css" />
+  </head>
+  <body>
+    <div class="navBar">
+      <div class="title" id="hellomart">
+        <img src="assets/img/hellomart.png" height="70px" />
+      </div>
+      <div id="username"></div>
+      <form class="search">
+        <input
+          class="searchText"
+          list="products"
+          placeholder="Search for an item"
+          title="search for items"
+        />
+        <datalist id="products">
+          <option value="tomato"></option>
+          <option value="onion"></option>
+          <option value="potato"></option>
+          <option value="apple"></option>
+          <option value="banana"></option>
+          <option value="kiwi"></option>
+          <option value="dal"></option>
+          <option value="milkmaid"></option>
+          <option value="oil"></option>
+        </datalist>
+        <button type="submit" class="searchButton">
+          <img
+            src="assets/img/search.png"
+            style="
+              width: 35px;
+              margin-left: -25px;
+              margin-top: -3px;
+              cursor: pointer;
+            "
+          />
+        </button>
+      </form>
+
+      <div class="cart" title="Click to display cart tab">
+        <a href="#cartBox">
+          <img class="cartIcon" src="assets/img/cart.png" alt="cartIcon" />
+          <div class="cart-items">0</div>
+        </a>
+      </div>
+      <div class="logout" title="click to logout">
+        <a href="/">
+          <img
+            src="assets/img/logout.png"
+            style="
+              width: 95px;
+              height: 30px;
+              margin-left: -25px;
+              margin-top: 38px;
+              cursor: pointer;
+            "
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="item-container" id="blur">
+      <!--            The available items will be added here          -->
+      <div class="types">Vegetables</div>
+      <div class="allItems_veg"></div>
+
+      <div class="types">Fruits</div>
+      <div class="allItems_fruits"></div>
+
+      <div class="types">Groceries</div>
+      <div class="allItems_groceries"></div>
+    </div>
+    <br />
+
+    <!-- Cart Items -->
+    <fieldset class="cartBox" id="cartBox">
+      <legend></legend>
+      <div>
+        <img id="closeCart" src="assets/img/close.png" alt="close Cart" />
+      </div>
+      <div id="cart-content">
+        <h1 style="text-align: center">Items in your cart</h1>
+        <div class="cartItems"></div>
+        <div class="totalprice" style="text-align: center">
+          <!-- <b>Total Price: ₹0</b> -->
+        </div>
+        <br />
+        <div class="checkoutall">
+          <button class="checkoutallButton" type="submit">Checkout all</button>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Selected item popup below -->
+    <div class="selectedItem" id="selected">
+      <img class="closeSelected" src="./assets/img/close.png" alt="close" />
+      <div class="innerSelected">
+        <img class="sldItemImage" src="./assets/img/tomato.png" /><br />
+        <div class="sldItemName">Tomato ketchup</div>
+        <div class="sldItemDescription">
+          Delicious sause made of fresh tomatoes
+        </div>
+        <div class="sldItemPrice">₹150</div>
+      </div>
+      <input
+        class="selectedQuantity"
+        type="number"
+        min="1"
+        max="10"
+        value="1"
+      />
+      <button id="addToCart">Add to Cart</button>
+    </div>
+
+    <script src="shopping.js" type="module"></script>
+  </body>
+</html>
